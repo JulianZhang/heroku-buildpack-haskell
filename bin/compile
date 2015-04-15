@@ -18,9 +18,9 @@ FIXED_HOME=/app
 mkdir -p $CACHE_DIR
 
 if [ ! -e $CACHE_DIR/ghc ]; then
-  GHC_URL="https://downloads.haskell.org/~ghc/7.8.3/ghc-7.8.3-x86_64-unknown-linux-centos65.tar.xz"
+  GHC_URL="https://downloads.haskell.org/~ghc/7.8.3/ghc-7.8.3-x86_64-unknown-linux-centos65.tar.bz2"
   echo "-----> Downloading GHC"
-  curl -# --max-time 120 -L "$GHC_URL" | tar xz -C $CACHE_DIR
+  curl -# --max-time 120 -L "$GHC_URL" | tar xvjf -C $CACHE_DIR
 fi
 
 # Restore GHC registry if available
